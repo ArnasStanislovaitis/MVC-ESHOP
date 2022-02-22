@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Suniukai_MVC_Paskaita.Migrations.UserDb
 {
-    public partial class login : Migration
+    public partial class users : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

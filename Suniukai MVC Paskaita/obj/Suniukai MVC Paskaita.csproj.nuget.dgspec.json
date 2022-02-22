@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jonas\\Documents\\GitHub\\Suniukai-MVC-Crud\\Suniukai MVC Paskaita\\Suniukai MVC Paskaita.csproj": {}
+    "C:\\Users\\Arnas\\Documents\\GitHub\\MVC-ESHOP\\Suniukai MVC Paskaita\\Suniukai MVC Paskaita.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jonas\\Documents\\GitHub\\Suniukai-MVC-Crud\\Suniukai MVC Paskaita\\Suniukai MVC Paskaita.csproj": {
+    "C:\\Users\\Arnas\\Documents\\GitHub\\MVC-ESHOP\\Suniukai MVC Paskaita\\Suniukai MVC Paskaita.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jonas\\Documents\\GitHub\\Suniukai-MVC-Crud\\Suniukai MVC Paskaita\\Suniukai MVC Paskaita.csproj",
+        "projectUniqueName": "C:\\Users\\Arnas\\Documents\\GitHub\\MVC-ESHOP\\Suniukai MVC Paskaita\\Suniukai MVC Paskaita.csproj",
         "projectName": "Suniukai MVC Paskaita",
-        "projectPath": "C:\\Users\\Jonas\\Documents\\GitHub\\Suniukai-MVC-Crud\\Suniukai MVC Paskaita\\Suniukai MVC Paskaita.csproj",
-        "packagesPath": "C:\\Users\\Jonas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jonas\\Documents\\GitHub\\Suniukai-MVC-Crud\\Suniukai MVC Paskaita\\obj\\",
+        "projectPath": "C:\\Users\\Arnas\\Documents\\GitHub\\MVC-ESHOP\\Suniukai MVC Paskaita\\Suniukai MVC Paskaita.csproj",
+        "packagesPath": "C:\\Users\\Arnas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Arnas\\Documents\\GitHub\\MVC-ESHOP\\Suniukai MVC Paskaita\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Jonas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Arnas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -88,7 +85,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

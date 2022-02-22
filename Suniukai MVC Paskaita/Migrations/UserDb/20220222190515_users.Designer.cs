@@ -12,8 +12,8 @@ using Suniukai_MVC_Paskaita.Data;
 namespace Suniukai_MVC_Paskaita.Migrations.UserDb
 {
     [DbContext(typeof(UserDbContext))]
-    [Migration("20220218172233_login")]
-    partial class login
+    [Migration("20220222190515_users")]
+    partial class users
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

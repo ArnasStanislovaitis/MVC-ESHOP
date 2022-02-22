@@ -10,9 +10,9 @@ using Suniukai_MVC_Paskaita.Data;
 
 namespace Suniukai_MVC_Paskaita.Migrations
 {
-    [DbContext(typeof(SuniukaiDbContext))]
-    [Migration("20220217184152_Pradzia")]
-    partial class Pradzia
+    [DbContext(typeof(EshopDbContext))]
+    [Migration("20220222190154_Product")]
+    partial class Product
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,7 +23,7 @@ namespace Suniukai_MVC_Paskaita.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("Suniukai_MVC_Paskaita.Models.Kaciukas", b =>
+            modelBuilder.Entity("Suniukai_MVC_Paskaita.Models.Product", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -31,40 +31,21 @@ namespace Suniukai_MVC_Paskaita.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("Aprasymas")
+                    b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Nuotrauka")
+                    b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Vardas")
+                    b.Property<string>("Photo")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Kaciukai");
-                });
-
-            modelBuilder.Entity("Suniukai_MVC_Paskaita.Models.Suniukas", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Aprasymas")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Nuotrauka")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Vardas")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Suniukai");
+                    b.ToTable("Products");
                 });
 #pragma warning restore 612, 618
         }

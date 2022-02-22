@@ -11,22 +11,22 @@ using Suniukai_MVC_Paskaita.Models;
 
 namespace Suniukai_MVC_Paskaita.Controllers
 {
-    public class SuniukasController : Controller
+    public class ProductsController : Controller
     {
-        private readonly SuniukaiDbContext _context;
+        private readonly EshopDbContext _context;
 
-        public SuniukasController(SuniukaiDbContext context)
+        public ProductsController(EshopDbContext context)
         {
             _context = context;
         }
 
-        // GET: Suniukas
+        // GET: Products
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Suniukai.ToListAsync());
+            return View(await _context.Products.ToListAsync());
         }
 
-        // GET: Suniukas/Details/5
+        // GET: Products/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -34,44 +34,39 @@ namespace Suniukai_MVC_Paskaita.Controllers
                 return NotFound();
             }
 
-            var suniukas = await _context.Suniukai
+            var product = await _context.Products
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (suniukas == null)
+            if (product == null)
             {
                 return NotFound();
             }
 
-            return View(suniukas);
+            return View(product);
         }
 
-        // GET: Suniukas/Create
+        // GET: Products/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        public async Task<IActionResult> Galerija()
-        {
-            return View(await _context.Suniukai.ToListAsync());
-        }
-
-        // POST: Suniukas/Create
+        // POST: Products/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Vardas,Nuotrauka,Aprasymas")] Suniukas suniukas)
+        public async Task<IActionResult> Create([Bind("Id,Name,Photo,Description,Price")] Product product)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(suniukas);
+                _context.Add(product);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(suniukas);
+            return View(product);
         }
 
-        // GET: Suniukas/Edit/5
+        // GET: Products/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -79,22 +74,22 @@ namespace Suniukai_MVC_Paskaita.Controllers
                 return NotFound();
             }
 
-            var suniukas = await _context.Suniukai.FindAsync(id);
-            if (suniukas == null)
+            var product = await _context.Products.FindAsync(id);
+            if (product == null)
             {
                 return NotFound();
             }
-            return View(suniukas);
+            return View(product);
         }
 
-        // POST: Suniukas/Edit/5
+        // POST: Products/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Vardas,Nuotrauka,Aprasymas")] Suniukas suniukas)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Photo,Description,Price")] Product product)
         {
-            if (id != suniukas.Id)
+            if (id != product.Id)
             {
                 return NotFound();
             }
@@ -103,12 +98,12 @@ namespace Suniukai_MVC_Paskaita.Controllers
             {
                 try
                 {
-                    _context.Update(suniukas);
+                    _context.Update(product);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!SuniukasExists(suniukas.Id))
+                    if (!ProductExists(product.Id))
                     {
                         return NotFound();
                     }
@@ -119,10 +114,10 @@ namespace Suniukai_MVC_Paskaita.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(suniukas);
+            return View(product);
         }
 
-        // GET: Suniukas/Delete/5
+        // GET: Products/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -130,30 +125,30 @@ namespace Suniukai_MVC_Paskaita.Controllers
                 return NotFound();
             }
 
-            var suniukas = await _context.Suniukai
+            var product = await _context.Products
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (suniukas == null)
+            if (product == null)
             {
                 return NotFound();
             }
 
-            return View(suniukas);
+            return View(product);
         }
 
-        // POST: Suniukas/Delete/5
+        // POST: Products/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var suniukas = await _context.Suniukai.FindAsync(id);
-            _context.Suniukai.Remove(suniukas);
+            var product = await _context.Products.FindAsync(id);
+            _context.Products.Remove(product);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool SuniukasExists(int id)
+        private bool ProductExists(int id)
         {
-            return _context.Suniukai.Any(e => e.Id == id);
+            return _context.Products.Any(e => e.Id == id);
         }
     }
 }
