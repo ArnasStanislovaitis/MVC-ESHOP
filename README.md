@@ -1,2 +1,1 @@
-# Suniukai-MVC-Crud
-MVC Pavyzdys
+# MVC E-SHOP
